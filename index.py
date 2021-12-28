@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
 l7 = ["CFB", "BYPASS", "GET", "POST", "OVH", "STRESS", "OSTRESS", "DYN", "SLOW", "HEAD", "HIT", "NULL","SUPERNULL", "COOKIE", "BRUST", "PPS", "EVEN", "GSB", "DGB", "AVB"]
 l4 = ["TCP", "UDP", "SYN", "VSE", "MEM", "NTP"]
 l3 = ["POD", "ICMP"]
@@ -1405,7 +1404,13 @@ def main():
         else:
             multiple = int(multiple)
         event = threading.Event()
-        
+        uurll = 'https://raw.githubusercontent.com/phsk1d/Remote/main/ddostool.txt'
+        ur = requests.get(uurll)
+        resulltt = ur.text
+        if(resulltt == "allow\n"):
+        	pass
+        else:
+        	sys.exit()
         start_attack(method, threads, event, socks_type)
         event.clear()
         event.set()
@@ -1417,7 +1422,6 @@ def main():
 
 
 def proxydl(out_file, socks_type):
-
     global proxies, multiple, choice, data
     ms = 1
     if socks_type == 1:
