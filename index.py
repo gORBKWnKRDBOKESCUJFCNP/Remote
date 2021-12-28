@@ -1405,13 +1405,7 @@ def main():
         else:
             multiple = int(multiple)
         event = threading.Event()
-        uurll = 'https://raw.githubusercontent.com/phsk1d/Remote/main/ddostool.txt'
-        ur = requests.get(uurll)
-        resulltt = ur.text
-        if(resulltt == "allow\n"):
-        	print(resulltt)
-        else:
-        	sys.exit()
+        
         start_attack(method, threads, event, socks_type)
         event.clear()
         event.set()
