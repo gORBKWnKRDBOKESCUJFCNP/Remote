@@ -1,1 +1,1 @@
-allow\n
+allow
